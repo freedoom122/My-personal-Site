@@ -27,39 +27,53 @@ const languages = [
 
 export default function About() {
   return (
-    <main className="relative min-h-screen z-10 pt-24 pb-20 px-6">
+    <main className="relative min-h-screen z-10 pt-28 pb-24 px-6">
       <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
       <div className="fixed top-40 right-10 w-64 h-64 rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
       <div className="fixed bottom-20 left-10 w-72 h-72 rounded-full bg-green-500/5 blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           variants={fadeUp(0)}
           initial="hidden"
           animate="show"
-          className="mb-16"
+          className="mb-16 text-center"
         >
           <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-3">
             // about_me.txt
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Who am <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #00e5cc, #00ff88)' }}>I?</span>
-          </h1>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full" />
+
+          {/* Avatar + Title - centered */}
+          <div className="flex items-center justify-center gap-6">
+            <img
+              src="/profile.jpg"
+              alt="Brasovean Marcu"
+              className="w-20 h-20 rounded-full object-cover border-2 border-cyan-500/20 shadow-md"
+              onError={(e) => {
+                (e.target as HTMLImageElement).style.display = 'none';
+              }}
+            />
+
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-0">
+              Who am <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #00e5cc, #00ff88)' }}>I?</span>
+            </h1>
+          </div>
+
+          <div className="mt-4 w-20 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full mx-auto" />
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-16 items-center justify-items-center">
           {/* Photo + quick facts */}
           <motion.div
             variants={fadeUp(0.1)}
             initial="hidden"
             animate="show"
-            className="space-y-6"
+            className="space-y-6 w-full max-w-md"
           >
-            {/* Profile photo */}
-            <div className="relative inline-block">
+            {/* Profile photo (larger, centered) */}
+            <div className="relative inline-block mx-auto">
               <div
                 className="w-64 h-64 rounded-2xl overflow-hidden mx-auto"
                 style={{ border: '1px solid rgba(0,229,204,0.3)', boxShadow: '0 0 40px rgba(0,229,204,0.15)' }}
@@ -80,14 +94,14 @@ export default function About() {
                 style={{ animationDuration: '3s' }}
               />
               {/* Status badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0a1a1e] border border-cyan-500/30 text-xs font-mono text-cyan-400 whitespace-nowrap">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0a1a1e] border border-cyan-500/30 text-xs font-mono text-cyan-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Online & Coding
+                <span>Online &amp; Coding</span>
               </div>
             </div>
 
             {/* Quick stats card */}
-            <div className="tech-card rounded-xl p-5 space-y-3 mt-8">
+            <div className="tech-card rounded-xl p-5 space-y-3 mt-8 w-full">
               <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">// quick_facts</p>
               {[
                 { label: 'Age', value: '16 years old' },
@@ -97,7 +111,7 @@ export default function About() {
                 { label: 'GitHub', value: '@freedoom122' },
                 { label: 'Focus', value: 'Tech & Programming' },
               ].map(({ label, value }) => (
-                <div key={label} className="flex justify-between items-center py-1 border-b border-[#0d2b30] last:border-0">
+                <div key={label} className="flex justify-between items-center py-2 border-b border-[#0d2b30] last:border-0">
                   <span className="font-mono text-xs text-[#5a8a85]">{label}</span>
                   <span className="text-sm text-cyan-300 font-medium">{value}</span>
                 </div>
@@ -110,10 +124,10 @@ export default function About() {
             variants={fadeUp(0.2)}
             initial="hidden"
             animate="show"
-            className="space-y-8"
+            className="space-y-8 w-full max-w-xl"
           >
             {/* Bio */}
-            <div className="tech-card rounded-xl p-6">
+            <div className="tech-card rounded-xl p-6 w-full">
               <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">// bio</p>
               <div className="space-y-4 text-[#8ab8b4] text-sm leading-relaxed">
                 <p>
@@ -133,14 +147,14 @@ export default function About() {
                   the creative process of making something from nothing — whether that's code, music, or a game idea.
                 </p>
                 <p>
-                  I speak fluent <span className="text-cyan-400">Romanian & English</span>, which makes me
+                  I speak fluent <span className="text-cyan-400">Romanian &amp; English</span>, which makes me
                   comfortable collaborating with people from anywhere in the world.
                 </p>
               </div>
             </div>
 
             {/* Languages */}
-            <div className="tech-card rounded-xl p-6">
+            <div className="tech-card rounded-xl p-6 w-full">
               <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-5">// spoken_languages</p>
               <div className="space-y-4">
                 {languages.map(({ lang, level, flag, percent }) => (
@@ -166,9 +180,9 @@ export default function About() {
             </div>
 
             {/* Hobbies */}
-            <div className="tech-card rounded-xl p-6">
+            <div className="tech-card rounded-xl p-6 w-full">
               <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-5">// interests</p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {hobbies.map(({ icon, label }, i) => (
                   <motion.span
                     key={label}
@@ -176,7 +190,7 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05, duration: 0.4 }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0d2b30] border border-cyan-500/20 text-sm text-cyan-300 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all duration-200 cursor-default"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0d2b30] border border-cyan-500/20 text-sm text-cyan-300 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all"
                   >
                     <span>{icon}</span>
                     <span className="font-mono text-xs">{label}</span>
@@ -196,7 +210,7 @@ export default function About() {
           className="mt-20"
         >
           <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-3">// my_journey</p>
-          <h2 className="text-2xl font-bold text-white mb-10">How it all started</h2>
+          <h2 className="text-2xl font-bold text-white mb-10 text-center">How it all started</h2>
 
           <div className="relative pl-8 space-y-10">
             <div className="timeline-line" />
