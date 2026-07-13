@@ -27,7 +27,7 @@ const languages = [
 
 export default function About() {
   return (
-    <main className="relative min-h-screen z-10 pt-28 pb-24">
+    <main className="relative min-h-screen z-10 pt-28 pb-24 px-6">
       <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
       <div className="fixed top-40 right-10 w-64 h-64 rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
       <div className="fixed bottom-20 left-10 w-72 h-72 rounded-full bg-green-500/5 blur-3xl pointer-events-none" />
@@ -38,9 +38,9 @@ export default function About() {
           variants={fadeUp(0)}
           initial="hidden"
           animate="show"
-          className="mb-16 text-center"
+          className="mb-20 text-center"
         >
-          <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-3">
+          <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">
             // about_me.txt
           </p>
 
@@ -60,20 +60,20 @@ export default function About() {
             </h1>
           </div>
 
-          <div className="mt-4 w-20 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full mx-auto" />
+          <div className="mt-6 w-20 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full mx-auto" />
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-16 items-center justify-items-center">
+        <div className="grid md:grid-cols-2 gap-20 items-start">
           {/* Photo + quick facts */}
           <motion.div
             variants={fadeUp(0.1)}
             initial="hidden"
             animate="show"
-            className="space-y-6 w-full max-w-md"
+            className="space-y-8 w-full max-w-md mx-auto md:mx-0"
           >
             {/* Profile photo (larger, centered) */}
-            <div className="relative inline-block mx-auto">
+            <div className="relative inline-block w-full">
               <div
                 className="w-64 h-64 rounded-2xl overflow-hidden mx-auto"
                 style={{ border: '1px solid rgba(0,229,204,0.3)', boxShadow: '0 0 40px rgba(0,229,204,0.15)' }}
@@ -101,8 +101,8 @@ export default function About() {
             </div>
 
             {/* Quick stats card */}
-            <div className="tech-card rounded-xl p-5 space-y-3 mt-8 w-full">
-              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">// quick_facts</p>
+            <div className="tech-card rounded-xl p-6 space-y-4 w-full">
+              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-5">// quick_facts</p>
               {[
                 { label: 'Age', value: '16 years old' },
                 { label: 'Location', value: 'Beclean, Romania 🇷🇴' },
@@ -111,7 +111,7 @@ export default function About() {
                 { label: 'GitHub', value: '@freedoom122' },
                 { label: 'Focus', value: 'Tech & Programming' },
               ].map(({ label, value }) => (
-                <div key={label} className="flex justify-between items-center py-2 border-b border-[#0d2b30] last:border-0">
+                <div key={label} className="flex justify-between items-center py-2.5 border-b border-[#0d2b30] last:border-0">
                   <span className="font-mono text-xs text-[#5a8a85]">{label}</span>
                   <span className="text-sm text-cyan-300 font-medium">{value}</span>
                 </div>
@@ -124,12 +124,12 @@ export default function About() {
             variants={fadeUp(0.2)}
             initial="hidden"
             animate="show"
-            className="space-y-8 w-full max-w-xl"
+            className="space-y-8 w-full"
           >
             {/* Bio */}
-            <div className="tech-card rounded-xl p-6 w-full">
-              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">// bio</p>
-              <div className="space-y-4 text-[#8ab8b4] text-sm leading-relaxed">
+            <div className="tech-card rounded-xl p-8 w-full">
+              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-6">// bio</p>
+              <div className="space-y-5 text-[#8ab8b4] text-sm leading-relaxed">
                 <p>
                   Hey! I'm <span className="text-cyan-300 font-semibold">Brasovean Marcu</span>, a 16-year-old
                   from Beclean, Romania. I'm a student at{' '}
@@ -154,12 +154,12 @@ export default function About() {
             </div>
 
             {/* Languages */}
-            <div className="tech-card rounded-xl p-6 w-full">
-              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-5">// spoken_languages</p>
-              <div className="space-y-4">
+            <div className="tech-card rounded-xl p-8 w-full">
+              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-6">// spoken_languages</p>
+              <div className="space-y-5">
                 {languages.map(({ lang, level, flag, percent }) => (
                   <div key={lang}>
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex justify-between items-center mb-3">
                       <span className="text-sm font-medium text-white flex items-center gap-2">
                         <span>{flag}</span> {lang}
                       </span>
@@ -180,9 +180,9 @@ export default function About() {
             </div>
 
             {/* Hobbies */}
-            <div className="tech-card rounded-xl p-6 w-full">
-              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-5">// interests</p>
-              <div className="flex flex-wrap gap-2 justify-center">
+            <div className="tech-card rounded-xl p-8 w-full">
+              <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-6">// interests</p>
+              <div className="flex flex-wrap gap-3 justify-start">
                 {hobbies.map(({ icon, label }, i) => (
                   <motion.span
                     key={label}
@@ -190,7 +190,7 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05, duration: 0.4 }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0d2b30] border border-cyan-500/20 text-sm text-cyan-300 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all"
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0d2b30] border border-cyan-500/20 text-sm text-cyan-300 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all duration-200"
                   >
                     <span>{icon}</span>
                     <span className="font-mono text-xs">{label}</span>
@@ -207,10 +207,10 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-20"
+          className="mt-24"
         >
-          <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-3">// my_journey</p>
-          <h2 className="text-2xl font-bold text-white mb-10 text-center">How it all started</h2>
+          <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">// my_journey</p>
+          <h2 className="text-2xl font-bold text-white mb-12 text-center">How it all started</h2>
 
           <div className="relative pl-8 space-y-10">
             <div className="timeline-line" />
@@ -258,8 +258,8 @@ export default function About() {
                   className="timeline-dot"
                   style={{ background: color, boxShadow: `0 0 10px ${color}` }}
                 />
-                <div className="tech-card rounded-xl p-5 hover:border-cyan-500/40 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-2">
+                <div className="tech-card rounded-xl p-6 hover:border-cyan-500/40 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
                     <span
                       className="font-mono text-xs px-2 py-0.5 rounded"
                       style={{ color, background: `${color}15`, border: `1px solid ${color}30` }}
