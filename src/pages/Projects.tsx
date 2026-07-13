@@ -85,14 +85,14 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <main className="relative min-h-screen z-10 pt-24 pb-20 px-6">
+    <main className="relative min-h-screen z-10 pt-28 pb-24 px-6">
       <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
       <div className="fixed top-40 right-20 w-64 h-64 rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header */}
-        <motion.div variants={fadeUp(0)} initial="hidden" animate="show" className="mb-16">
-          <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-3">// projects[]</p>
+        <motion.div variants={fadeUp(0)} initial="hidden" animate="show" className="mb-20">
+          <p className="font-mono text-xs text-cyan-500 tracking-widest uppercase mb-4">// projects[]</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Things I've{' '}
             <span
@@ -102,18 +102,18 @@ export default function Projects() {
               Built
             </span>
           </h1>
-          <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full mb-4" />
-          <p className="text-[#5a8a85] text-sm max-w-xl">
+          <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 rounded-full mb-6" />
+          <p className="text-[#5a8a85] text-sm max-w-xl leading-relaxed">
             Real projects. Some finished, some always evolving. Each one taught me something new.
           </p>
         </motion.div>
 
         {/* Featured Projects */}
-        <motion.div variants={fadeUp(0.1)} initial="hidden" animate="show">
-          <p className="font-mono text-xs text-[#5a8a85] tracking-widest uppercase mb-5">
+        <motion.div variants={fadeUp(0.1)} initial="hidden" animate="show" className="mb-16">
+          <p className="font-mono text-xs text-[#5a8a85] tracking-widest uppercase mb-8">
             // featured
           </p>
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-8">
             {featured.map((project, i) => (
               <motion.div
                 key={project.id}
@@ -122,7 +122,7 @@ export default function Projects() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.7 }}
                 whileHover={{ y: -6 }}
-                className="tech-card rounded-xl p-6 relative overflow-hidden group cursor-default"
+                className="tech-card rounded-xl p-8 relative overflow-hidden group cursor-default"
                 style={{ borderColor: `${project.statusColor}20` }}
               >
                 {/* Gradient accent */}
@@ -131,8 +131,8 @@ export default function Projects() {
                   style={{ background: project.statusColor }}
                 />
 
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{project.icon}</span>
+                <div className="flex items-start justify-between mb-5">
+                  <span className="text-4xl">{project.icon}</span>
                   <span
                     className="flex items-center gap-1.5 font-mono text-[10px] px-2 py-1 rounded-full"
                     style={{
@@ -149,14 +149,14 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <h3 className="text-white font-bold text-xl mb-2 group-hover:text-cyan-300 transition-colors duration-200">
+                <h3 className="text-white font-bold text-xl mb-3 group-hover:text-cyan-300 transition-colors duration-200">
                   {project.title}
                 </h3>
-                <p className="text-[#5a8a85] text-sm leading-relaxed mb-5">
+                <p className="text-[#5a8a85] text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -167,7 +167,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-[#0d2b30]">
+                <div className="flex items-center gap-4 pt-6 border-t border-[#0d2b30]">
                   <a
                     href="https://github.com/freedoom122"
                     target="_blank"
@@ -184,10 +184,10 @@ export default function Projects() {
         </motion.div>
 
         {/* Other Projects */}
-        <p className="font-mono text-xs text-[#5a8a85] tracking-widest uppercase mb-5">
+        <p className="font-mono text-xs text-[#5a8a85] tracking-widest uppercase mb-8">
           // other_projects
         </p>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           {rest.map((project, i) => (
             <motion.div
               key={project.id}
@@ -196,10 +196,10 @@ export default function Projects() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
               whileHover={{ y: -4 }}
-              className="tech-card rounded-xl p-5 group cursor-default"
+              className="tech-card rounded-xl p-6 group cursor-default"
             >
-              <div className="flex items-start justify-between mb-3">
-                <span className="text-2xl">{project.icon}</span>
+              <div className="flex items-start justify-between mb-4">
+                <span className="text-3xl">{project.icon}</span>
                 <span
                   className="flex items-center gap-1 font-mono text-[10px] px-2 py-0.5 rounded-full"
                   style={{
@@ -215,7 +215,7 @@ export default function Projects() {
                   {project.status}
                 </span>
               </div>
-              <h3 className="text-white font-semibold text-base mb-2 group-hover:text-cyan-300 transition-colors duration-200">
+              <h3 className="text-white font-semibold text-base mb-3 group-hover:text-cyan-300 transition-colors duration-200">
                 {project.title}
                 {project.isThis && (
                   <span className="ml-2 text-[10px] font-mono text-green-400 border border-green-400/30 px-1.5 py-0.5 rounded">
@@ -223,7 +223,7 @@ export default function Projects() {
                   </span>
                 )}
               </h3>
-              <p className="text-[#5a8a85] text-xs leading-relaxed mb-4">
+              <p className="text-[#5a8a85] text-xs leading-relaxed mb-5">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-1.5">
@@ -246,9 +246,9 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-12 text-center"
+          className="text-center"
         >
-          <p className="text-[#5a8a85] text-sm mb-4">Want to see more? Check out my GitHub.</p>
+          <p className="text-[#5a8a85] text-sm mb-5">Want to see more? Check out my GitHub.</p>
           <a
             href="https://github.com/freedoom122"
             target="_blank"
