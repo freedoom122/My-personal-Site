@@ -34,15 +34,15 @@ export default function Home() {
       <div className="fixed bottom-20 right-10 w-96 h-96 rounded-full bg-green-500/5 blur-3xl pointer-events-none z-0" />
 
       {/* Hero Section */}
-      <section className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-28 pb-16 min-h-screen">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-24 min-h-screen">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
 
           {/* Badge */}
           <motion.div
             variants={fadeUp(0)}
             initial="hidden"
             animate="show"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/5"
           >
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             <span className="font-mono text-xs text-cyan-400 tracking-widest uppercase">
@@ -55,7 +55,7 @@ export default function Home() {
             variants={fadeUp(0.15)}
             initial="hidden"
             animate="show"
-            className="text-5xl md:text-7xl font-bold mb-4 leading-tight"
+            className="text-5xl md:text-7xl font-bold leading-tight"
           >
             <span className="text-white">Brasovean </span>
             <span
@@ -71,7 +71,7 @@ export default function Home() {
             variants={fadeUp(0.3)}
             initial="hidden"
             animate="show"
-            className="mb-6 h-10 flex items-center justify-center"
+            className="h-10 flex items-center justify-center"
           >
             <span className="font-mono text-lg md:text-xl text-[#5a8a85]">
               <span className="text-green-400">$ </span>
@@ -99,7 +99,7 @@ export default function Home() {
             variants={fadeUp(0.45)}
             initial="hidden"
             animate="show"
-            className="text-[#5a8a85] text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10"
+            className="text-[#5a8a85] text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
           >
             16-year-old student from{' '}
             <span className="text-cyan-400">Beclean, Romania 🇷🇴</span> who lives and breathes
@@ -111,7 +111,7 @@ export default function Home() {
             variants={fadeUp(0.6)}
             initial="hidden"
             animate="show"
-            className="flex flex-wrap items-center justify-center gap-4 mb-16"
+            className="flex flex-wrap items-center justify-center gap-4"
           >
             <Link
               to="/projects"
@@ -170,7 +170,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="relative z-10 border-t border-[#0d2b30] bg-[#030a0c]/80 backdrop-blur-sm">
-        <div className="max-w-4xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map(({ value, label }, i) => (
             <motion.div
               key={label}
@@ -181,7 +181,7 @@ export default function Home() {
               className="text-center"
             >
               <p
-                className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text mb-1"
+                className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text mb-2"
                 style={{ backgroundImage: 'linear-gradient(135deg, #00e5cc, #00ff88)' }}
               >
                 {value}
@@ -193,8 +193,8 @@ export default function Home() {
       </section>
 
       {/* Quick Info strip */}
-      <section className="relative z-10 py-20 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+      <section className="relative z-10 py-24 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
           {[
             {
               icon: '💻',
@@ -218,10 +218,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.7 }}
-              className="tech-card rounded-xl p-6 group cursor-default"
+              className="tech-card rounded-xl p-8 group cursor-default"
             >
-              <div className="text-3xl mb-4">{icon}</div>
-              <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-cyan-400 transition-colors duration-200">
+              <div className="text-4xl mb-4">{icon}</div>
+              <h3 className="text-white font-semibold text-lg mb-3 group-hover:text-cyan-400 transition-colors duration-200">
                 {title}
               </h3>
               <p className="text-[#5a8a85] text-sm leading-relaxed">{desc}</p>
