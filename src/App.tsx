@@ -17,7 +17,10 @@ function PageWrapper({ children }: { children: React.ReactNode }) {
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      {children}
+      {/* Site-wide centered container to keep pages visually balanced */}
+      <div className="max-w-5xl mx-auto px-6">
+        {children}
+      </div>
     </motion.div>
   );
 }
