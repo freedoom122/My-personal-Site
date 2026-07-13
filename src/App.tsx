@@ -17,8 +17,9 @@ function PageWrapper({ children }: { children: React.ReactNode }) {
       exit={{ opacity: 0, y: -16 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      {/* Site-wide centered container to keep pages visually balanced */}
-      <div className="max-w-5xl mx-auto px-6">
+      {/* Individual pages own their responsive gutters. Keeping this wrapper
+          gutter-free prevents small screens from getting double side padding. */}
+      <div className="max-w-5xl mx-auto">
         {children}
       </div>
     </motion.div>

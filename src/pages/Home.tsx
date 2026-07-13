@@ -34,8 +34,8 @@ export default function Home() {
       <div className="fixed bottom-20 right-10 w-96 h-96 rounded-full bg-green-500/5 blur-3xl pointer-events-none z-0" />
 
       {/* Hero Section */}
-      <section className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-24 min-h-screen">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
+      <section className="relative z-10 flex-1 flex flex-col items-center justify-center px-5 sm:px-8 pt-36 pb-28 min-h-screen">
+        <div className="max-w-5xl mx-auto text-center space-y-10">
 
           {/* Badge */}
           <motion.div
@@ -111,11 +111,11 @@ export default function Home() {
             variants={fadeUp(0.6)}
             initial="hidden"
             animate="show"
-            className="flex flex-wrap items-center justify-center gap-4"
+            className="flex flex-wrap items-center justify-center gap-4 sm:gap-5"
           >
             <Link
               to="/projects"
-              className="group flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-[#050d0f] transition-all duration-300 hover:opacity-90"
+              className="group flex min-h-12 items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-sm text-[#050d0f] transition-all duration-300 hover:opacity-90"
               style={{ background: 'linear-gradient(135deg, #00e5cc, #00ff88)' }}
             >
               View Projects
@@ -123,7 +123,7 @@ export default function Home() {
             </Link>
             <Link
               to="/cv"
-              className="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-cyan-400 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-400/5 transition-all duration-300"
+              className="flex min-h-12 items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-sm text-cyan-400 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-400/5 transition-all duration-300"
             >
               <FiDownload size={14} />
               View CV
@@ -135,7 +135,7 @@ export default function Home() {
             variants={fadeUp(0.75)}
             initial="hidden"
             animate="show"
-            className="flex items-center justify-center gap-6"
+            className="flex items-center justify-center gap-3 sm:gap-5"
           >
             {[
               { href: 'https://github.com/freedoom122', icon: <FiGithub size={20} />, label: 'GitHub' },
@@ -147,7 +147,7 @@ export default function Home() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-[#5a8a85] hover:text-cyan-400 transition-colors duration-200"
+                className="group flex min-h-11 items-center gap-2 rounded-lg px-3 text-[#5a8a85] hover:bg-cyan-500/5 hover:text-cyan-400 transition-colors duration-200"
               >
                 {icon}
                 <span className="font-mono text-xs hidden sm:inline">{label}</span>
@@ -170,7 +170,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="relative z-10 border-t border-[#0d2b30] bg-[#030a0c]/80 backdrop-blur-sm">
-        <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
           {stats.map(({ value, label }, i) => (
             <motion.div
               key={label}
@@ -193,8 +193,8 @@ export default function Home() {
       </section>
 
       {/* Quick Info strip */}
-      <section className="relative z-10 py-24 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <section className="relative z-10 py-28 px-5 sm:px-8">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 md:gap-10">
           {[
             {
               icon: '💻',

@@ -15,12 +15,12 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3">
           <a
             href="https://github.com/freedoom122"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#5a8a85] hover:text-cyan-400 transition-colors duration-200"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-[#5a8a85] hover:bg-cyan-500/5 hover:text-cyan-400 transition-colors duration-200"
             aria-label="GitHub"
           >
             <FiGithub size={18} />
@@ -29,7 +29,7 @@ export default function Footer() {
             href="https://www.instagram.com/br4sove4n"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#5a8a85] hover:text-cyan-400 transition-colors duration-200"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-[#5a8a85] hover:bg-cyan-500/5 hover:text-cyan-400 transition-colors duration-200"
             aria-label="Instagram"
           >
             <FiInstagram size={18} />
@@ -38,7 +38,7 @@ export default function Footer() {
             href="https://www.tiktok.com/@fr33d00m.official"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#5a8a85] hover:text-cyan-400 transition-colors duration-200"
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-[#5a8a85] hover:bg-cyan-500/5 hover:text-cyan-400 transition-colors duration-200"
             aria-label="TikTok"
           >
             <SiTiktok size={16} />

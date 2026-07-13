@@ -172,7 +172,7 @@ export default function Projects() {
                     href="https://github.com/freedoom122"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs text-[#5a8a85] hover:text-cyan-400 transition-colors duration-200 font-mono"
+                    className="flex min-h-11 items-center gap-1.5 rounded-md px-2 text-xs text-[#5a8a85] hover:bg-cyan-500/5 hover:text-cyan-400 transition-colors duration-200 font-mono"
                   >
                     <FiGithub size={14} />
                     GitHub
@@ -253,7 +253,7 @@ export default function Projects() {
             href="https://github.com/freedoom122"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-cyan-400 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-400/5 transition-all duration-300"
+            className="inline-flex min-h-12 items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-sm text-cyan-400 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-400/5 transition-all duration-300"
           >
             <FiGithub size={16} />
             @freedoom122

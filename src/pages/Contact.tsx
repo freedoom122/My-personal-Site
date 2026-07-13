@@ -97,7 +97,7 @@ export default function Contact() {
   const inputClass = (field: string) =>
     `w-full bg-[#0a1a1e] border ${
       errors[field] ? 'border-red-500/50' : 'border-[#0d2b30]'
-    } rounded-lg px-4 py-3 text-sm text-white placeholder-[#3a5a55] focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-200 font-[inherit]`;
+    } rounded-lg px-4 py-3.5 text-sm text-white placeholder-[#3a5a55] focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-200 font-[inherit]`;
 
   return (
     <main className="relative min-h-screen z-10 pt-24 pb-20 px-6">
@@ -218,7 +218,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm text-[#050d0f] transition-all duration-300 hover:opacity-90 disabled:opacity-60"
+                    className="w-full flex min-h-12 items-center justify-center gap-2 py-3.5 rounded-lg font-semibold text-sm text-[#050d0f] transition-all duration-300 hover:opacity-90 disabled:opacity-60"
                     style={{ background: 'linear-gradient(135deg, #00e5cc, #00ff88)' }}
                   >
                     {sending ? (

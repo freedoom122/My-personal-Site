@@ -48,7 +48,7 @@ export default function CV() {
             </div>
             <button
               onClick={() => window.print()}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-[#050d0f] transition-all duration-300 hover:opacity-90 self-start sm:self-auto"
+              className="flex min-h-12 items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-[#050d0f] transition-all duration-300 hover:opacity-90 self-start sm:self-auto"
               style={{ background: 'linear-gradient(135deg, #00e5cc, #00ff88)' }}
             >
               <FiDownload size={15} />
@@ -248,7 +248,7 @@ export default function CV() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono text-cyan-400 border border-cyan-500/25 bg-cyan-500/5 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all duration-200"
+                  className="flex min-h-11 items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono text-cyan-400 border border-cyan-500/25 bg-cyan-500/5 hover:border-cyan-400/50 hover:bg-cyan-500/10 transition-all duration-200"
                 >
                   {icon}
                   {label}
