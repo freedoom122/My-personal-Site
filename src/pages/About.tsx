@@ -27,12 +27,12 @@ const languages = [
 
 export default function About() {
   return (
-    <main className="relative min-h-screen z-10 pt-28 pb-24 px-6">
+    <main className="relative min-h-screen z-10 pt-28 pb-24">
       <div className="fixed inset-0 grid-bg pointer-events-none z-0" />
       <div className="fixed top-40 right-10 w-64 h-64 rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
       <div className="fixed bottom-20 left-10 w-72 h-72 rounded-full bg-green-500/5 blur-3xl pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="relative z-10 w-full">
         {/* Header */}
         <motion.div
           variants={fadeUp(0)}
